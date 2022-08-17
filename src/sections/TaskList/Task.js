@@ -17,9 +17,14 @@ const Task = ({ item }) => {
         <List.Item.Meta
           title={<p>Title: {item.title}</p>}
           description={
-            <p>
-              Tracked Time: <span className="bold">{item.timer}</span>
-            </p>
+            <div>
+              <p>
+                Description: <span className="bold">{item.description}</span>
+              </p>
+              <p>
+                Tracked Time: <span className="bold">{item.timer}</span>
+              </p>
+            </div>
           }
         />
       </List.Item>
