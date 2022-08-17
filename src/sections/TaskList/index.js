@@ -1,5 +1,5 @@
-import { Avatar, Button, List } from "antd";
-import React, { useMemo, useState } from "react";
+import { List } from "antd";
+import React, { useMemo } from "react";
 import { useUIContext } from "../../_context/UIContext";
 import Task from "./Task";
 const TaskList = () => {

@@ -13,6 +13,7 @@ const ActionButton = () => {
       isActive: UIContext.isActive,
       isPaused: UIContext.isPaused,
       handleSaveTimer: UIContext.handleSaveTimer,
+      time: UIContext.time,
     };
   }, [UIContext]);
 
@@ -28,7 +29,7 @@ const ActionButton = () => {
       <Button disabled={UIProps.isPaused} onClick={UIProps.handlePause}>
         Pause
       </Button>
-      <Button type="dashed" onClick={UIProps.handleSaveTimer}>
+      <Button disabled={UIProps.time===0} type="dashed" onClick={UIProps.handleSaveTimer}>
         Save
       </Button>
     </div>

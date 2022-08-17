@@ -1,9 +1,17 @@
 import { Button, List } from "antd";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { EditTaskModal } from "../../components";
+import { useUIContext } from "../../_context/UIContext";
 
 const Task = ({ item }) => {
   const [openModal, setOpenModal] = useState(false);
+
+  const UIContext = useUIContext();
+  const UIProps = useMemo(() => {
+    return {
+      handleDeleteTask: UIContext.handleDeleteTask,
+    };
+  }, [UIContext]);
 
   return (
     <>
@@ -11,6 +19,9 @@ const Task = ({ item }) => {
         actions={[
           <Button onClick={() => setOpenModal(true)} key="edit">
             Edit
+          </Button>,
+          <Button onClick={() => UIProps.handleDeleteTask(item.id)} key="edit">
+            Delete
           </Button>,
         ]}
       >

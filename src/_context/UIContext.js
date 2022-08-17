@@ -71,6 +71,10 @@ export function UIProvider({ children }) {
     setOpenTaskSaveModal(true);
   };
 
+  const handleDeleteTask = (id) => {
+    setTaskList((prev) => prev.filter((obj) => obj.id !== id));
+  };
+
   const value = {
     setOpenTaskSaveModal,
     openTaskSaveModal,
@@ -78,6 +82,7 @@ export function UIProvider({ children }) {
     openTaskEditModal,
     handleSaveTask,
     handleEditTask,
+    handleDeleteTask,
     handleStart,
     handlePause,
     handleSaveTimer,
